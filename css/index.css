@@ -1,0 +1,55 @@
+body {
+margin:0px
+}
+
+/* header */
+header {
+    position: fixed; /* Stays fixed while scrolling */
+    height: 100vh;
+    width: 80px;
+    background: linear-gradient(5deg, #06ce7b, #3ee998);
+    align-self: auto;
+    display: grid;
+    align-content: end;
+    justify-content: center;
+    border-radius: 40px 0px 40px 0px;
+}
+
+nav {
+  width: 62px;
+  height: 245px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+li{
+    list-style: none; 
+    height: 44px;
+    width: 44px;
+}
+
+li a{
+ width: 44px;
+ height: 48px;
+ background-color: inherit;
+ border: none;
+}
+
+a  svg{
+    color: #444242;
+    
+    filter: drop-shadow(4px 3px 3px rgba(0, 0, 0, 0.3));
+    border: none;
+}
+svg :hover{
+    color: #a8a8a8;
+}
+
+/* nav-btn */
+.navbtn > svg {
+  
+
+}

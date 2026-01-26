@@ -1,3 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Form</title>
+</head>
+<body>
+      <!-- Background shapes -->
+    <div class="bg-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Glassmorphism login form -->
+    <div class="glass-container">
+        <div class="login-header">
+            <h1>Registeration</h1>
+            <p>Register for new account </p>
+        </div>
+
+        <form id="registerForm">
+            <div class="input-group">
+                <i class="fa fa-user"></i>
+                <input type="text" placeholder="Username" id="username" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fa fa-at"></i>
+                <input type="text" placeholder="Email" id="email" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fa fa-lock"></i>
+                <input type="password" placeholder="Password" id="password" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fa fa-lock"></i>
+                <input type="password" placeholder="Confirm password" id="confirm-password" required>
+            </div>
+
+            <p id="sex">Sex</p>
+            <div class="radio">
+            
+            <input type="radio"  id="female" name="sex" value="female" >
+            <label for="female">Female</label>
+            <input type="radio"  id="male" name="sex" value="male" >
+            <label for="female">Male</label>    
+            </div>
+            
+
+            
+
+            <button type="submit" class="login-btn">Sign up</button>
+
+        
+            
+
+            <p class="register-link">
+                Already have an account?
+                <a href="#">Sign in</a>
+            </p>
+        </form>
+    </div>
+
+    <!-- Browser compatibility notice -->
+    <div class="browser-notice" id="browserNotice">
+        For the best experience, please use a modern browser that supports backdrop-filter.
+    </div>
+
+    
+</body>
+<style>
             * {
             margin: 0;
             padding: 0;
@@ -189,6 +266,13 @@
             margin-bottom: 30px;
             font-size: 14px;
         }
+        .radio{
+            display: flex;
+            align-items: center;
+            justify-content:space-evenly;
+
+        }
+        p{color: rgba(255, 255, 255, 0.84);}
 
         .remember {
             display: flex;
@@ -306,6 +390,7 @@
             transform: translateY(-3px);
         }
 
+
         /* Browser compatibility notice */
         .browser-notice {
             position: fixed;
@@ -357,3 +442,69 @@
                 height: 45px;
             }
         }
+</style>
+<script>
+      // Check for backdrop-filter support
+        function checkBackdropFilterSupport() {
+            const hasBackdropFilter = CSS.supports('backdrop-filter', 'blur(1px)') || 
+                                     CSS.supports('-webkit-backdrop-filter', 'blur(1px)');
+            
+            if (!hasBackdropFilter) {
+                const notice = document.getElementById('browserNotice');
+                notice.style.display = 'block';
+                
+                // Hide notice after 5 seconds
+                setTimeout(() => {
+                    notice.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        // Form submission
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+            
+            // Simple validation
+            if (!username || !password) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // In a real application, you would send this data to a server
+            console.log('Login attempt:', { username, password, remember });
+            
+            // Show success message
+            alert(`Welcome back, ${username}! Login successful.`);
+            
+            // Reset form
+            document.getElementById('loginForm').reset();
+        });
+
+        // Social login buttons
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const platform = this.querySelector('i').className.split(' ')[1].split('-')[1];
+                alert(`Sign in with ${platform.charAt(0).toUpperCase() + platform.slice(1)} would be triggered in a real application.`);
+            });
+        });
+
+        // Forgot password link
+        document.querySelector('.forgot-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('A password reset link would be sent to your email in a real application.');
+        });
+
+        // Register link
+        document.querySelector('.register-link a').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Registration form would open in a real application.');
+        });
+
+        // Check for backdrop-filter support on load
+        document.addEventListener('DOMContentLoaded', checkBackdropFilterSupport);
+</script>
+</html>

@@ -43,13 +43,17 @@
                 <input type="password" placeholder="Confirm password" id="confirm-password" required>
             </div>
 
-            <p id="sex">Sex</p>
-            <div class="radio">
             
-            <input type="radio"  id="female" name="sex" value="female" >
-            <label for="female">Female</label>
-            <input type="radio"  id="male" name="sex" value="male" >
-            <label for="female">Male</label>    
+            <div class="radio " >
+                <p id="sex">Sex :</p>
+                <div>
+                female
+                <input type="radio"  id="female" name="user_sex" value="female" >
+                </div>
+                <div>
+                male
+                <input type="radio"  id="male" name="user_sex" value="male" >      
+                </div>
             </div>
             
 
@@ -269,10 +273,23 @@
         .radio{
             display: flex;
             align-items: center;
-            justify-content:space-evenly;
+            justify-content:space-around;
+            gap: 0px;
+            color: #f0e9e9;
+            
+            margin-bottom: 28px;
 
         }
-        p{color: rgba(255, 255, 255, 0.84);}
+
+        .radio > div{
+                gap: 5px;
+                display: flex;
+                align-items: center;
+        }
+       
+
+        
+        p{color:  rgba(255, 255, 255, 0.9);}
 
         .remember {
             display: flex;

@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+   
     <header>
         <nav>
                 <li>
@@ -28,5 +29,48 @@
         </nav>
     </header>
     
+
+    <main>
+        <div class="search-box">
+            <div class="search-inputs">
+                <div class="input-group">
+                    <label for="patient_name">Search by patient name</label>
+                    <input type="text" name="patient_name" placeholder="Enter patient name" id="patient_name">
+                </div>
+                <div class="input-group">
+                    <label for="case_number">Search by case number</label>
+                    <input type="text" name="case_number" placeholder="Enter case number" id="case_number">
+                </div>
+            </div>
+            <div class="search-btn">
+                <button id="btn-reset">Reset</button>
+                <button id="btn-search"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376C296.3 401.1 253.9 416 208 416 93.1 416 0 322.9 0 208S93.1 0 208 0 416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg> </button>
+            </div>
+           
+        </div>
+        <section class="table-container">
+            <table id="nestedTable">
+                <thead>
+                    <tr class="parent-row">
+                        <th>Creation Time</th>
+                        <th>Case #</th>
+                        <th>Case Status</th>
+                        <th>Patient ID</th>
+                        <th>Radiologist</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <th>1234</th>
+                        <th>1</th>
+                        <th>Unassigned</th>
+                        <th>1</th>
+                        <th>Ahmed</th>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
 </body>
+
 </html>

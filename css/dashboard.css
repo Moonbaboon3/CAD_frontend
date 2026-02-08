@@ -54,3 +54,53 @@
 .patient_details button:hover:before {
   transform: translateX(15em);
 } 
+
+.chart-container{
+    height: 400px;
+    width: 665px;
+}
+
+canvas#chart-result {
+    padding: 15px;
+    scale: 1;
+
+}
+.patient_details {
+    padding: 15px;
+}
+
+.result {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.final-percentage {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+span {
+    font-size: 100px;
+    color: red;
+}
+
+.final-percentage h4 {
+    font-size: large;
+    margin: 0;
+}
+
+.final-percentage > h3 {
+    margin: 0;
+}
+
+.final-percentage div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #444242;
+}
+
+.final-percentage h3 {
+    font-size: xxx-large;
+}
